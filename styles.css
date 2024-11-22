@@ -11,8 +11,8 @@
 body {
     margin: 0;
     font-family: 'Arial', sans-serif;
-    background: url('grainy-texture.png'), linear-gradient(135deg, #f4e1d2, #e5c1d1, #c8d4e0, #d1e0e9);
-    background-size: cover, 400% 400%;
+    background: linear-gradient(135deg, #f4e1d2, #e5c1d1, #c8d4e0, #d1e0e9);
+    background-size: 400% 400%;
     animation: rgbAnimation 15s ease infinite; /* Slower animation for a calm feel */
     color: white;
     display: flex;
