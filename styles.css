@@ -2,7 +2,7 @@
 
 body {
     margin: 0;
-    font-family: 'Press Start 2P', monospace;
+    font-family: 'Arial', sans-serif;
     background: radial-gradient(circle, #0d0d28 0%, #020211 100%);
     color: white;
     display: flex;
@@ -11,7 +11,9 @@ body {
     height: 100vh;
     position: relative;
     overflow: hidden;
+    background-attachment: fixed;
 }
+
 
 .star {
     position: absolute;
@@ -36,14 +38,14 @@ body {
     text-align: center;
     width: 90%;
     max-width: 400px;
-    padding: 20px;
+    padding: 40px 20px;
     background: rgba(0, 0, 0, 0.7);
     border-radius: 20px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
     position: relative;
     z-index: 10;
-    padding-top: 50px;
 }
+
 
 .profile {
     margin-bottom: 20px;
