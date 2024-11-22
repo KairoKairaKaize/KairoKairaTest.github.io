@@ -2,11 +2,10 @@
 
 body {
     margin: 0;
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #f4e1d2, #e5c1d1, #c8d4e0, #d1e0e9),
-                url('path-to-your-noise-image.png'); 
-    background-size: cover;
-    background-attachment: fixed;
+    font-family: 'Press Start 2P', monospace;
+    background: linear-gradient(135deg, #121212, #1a1a1a, #0d0d0d);
+    background-size: 400% 400%;
+    animation: rgbAnimation 15s ease infinite;
     color: white;
     display: flex;
     justify-content: center;
@@ -14,9 +13,10 @@ body {
     height: 100vh;
     position: relative;
     overflow: hidden;
-    background-blend-mode: overlay; 
-    opacity: 0.8;  
+    background-attachment: fixed;
 }
+
+
 
 
 @keyframes starAnimation {
