@@ -11,9 +11,9 @@
 body {
     margin: 0;
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(45deg, red, blue, green, yellow, pink, cyan);
-    background-size: 400% 400%;
-    animation: rgbAnimation 5s ease infinite;
+    background: url('grainy-texture.png'), linear-gradient(135deg, #f4e1d2, #e5c1d1, #c8d4e0, #d1e0e9);
+    background-size: cover, 400% 400%;
+    animation: rgbAnimation 15s ease infinite; /* Slower animation for a calm feel */
     color: white;
     display: flex;
     justify-content: center;
@@ -23,6 +23,7 @@ body {
     overflow: hidden;
     background-attachment: fixed;
 }
+
 
 @keyframes particlesMovement {
     0% { transform: scale(0.8); opacity: 0.5; }
@@ -185,16 +186,10 @@ html {
     0% {
         background-position: 0% 50%;
     }
-    25% {
-        background-position: 25% 50%;
-    }
     50% {
         background-position: 50% 50%;
     }
-    75% {
-        background-position: 75% 50%;
-    }
     100% {
-        background-position: 0% 50%;
+        background-position: 100% 50%;
     }
 }
