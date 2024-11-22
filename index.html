@@ -17,18 +17,13 @@
             <h1>Jaiden's Haven</h1>
         </div>
 
- 
-        <audio id="background-audio" loop>
+        <audio autoplay loop>
             <source src="https://drive.google.com/uc?export=download&id=1l9TV9xEC1DYFYA15qfiN5rPGY3KXHHlX" type="audio/mp3">
             Your browser does not support the audio element.
         </audio>
 
         <script>
-            window.addEventListener('load', () => {
-                const audio = document.getElementById('background-audio');
-                audio.play();  // Explicitly play the audio when the page loads
-                audio.volume = 0.1;  // Set the volume to a low level
-            });
+            document.querySelector("audio").volume = 0.1;  
         </script>
 
         <div class="links">
