@@ -74,7 +74,7 @@ body::after {
 .container {
     text-align: center;
     width: 90%;                
-    max-width: 350px;           
+    max-width: 250px;           
     height: 500px;           
     padding: 20px;              
     background: rgba(0, 0, 0, 0.7);
