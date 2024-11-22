@@ -2,10 +2,8 @@
 
 body {
     margin: 0;
-    font-family: 'Press Start 2P', monospace;
-    background: linear-gradient(135deg, #f4e1d2, #e5c1d1, #c8d4e0, #d1e0e9);
-    background-size: 400% 400%;
-    animation: rgbAnimation 15s ease infinite;
+    font-family: 'Arial', sans-serif;
+    background: radial-gradient(circle, #0d0d28 0%, #020211 100%);
     color: white;
     display: flex;
     justify-content: center;
