@@ -1,11 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 body {
     margin: 0;
-    font-family: 'Press Start 2P', cursive;
-    background-color: #2a2a2a;
+    font-family: 'Press Start 2P', monospace;
+    background: linear-gradient(135deg, #f4e1d2, #e5c1d1, #c8d4e0, #d1e0e9);
+    background-size: 400% 400%;
+    animation: rgbAnimation 15s ease infinite;
     color: white;
-    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100vh;
+    position: relative;
     overflow: hidden;
+    background-attachment: fixed;
+}
+
+@keyframes starAnimation {
+    0% {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+    50% {
+        opacity: 0.6;
+        transform: translate(5px, 5px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-5px, -5px);
+    }
+}
+
+.star {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background-color: white;
+    border-radius: 50%;
+    opacity: 1;
+    animation: starAnimation 5s infinite ease-in-out;
 }
 
 .container {
@@ -13,12 +46,17 @@ body {
     width: 90%;
     max-width: 400px;
     padding: 20px;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.7);
     border-radius: 20px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
     position: relative;
     z-index: 10;
     padding-top: 50px;
+}
+
+.profile {
+    margin-bottom: 20px;
+    animation: fadeIn 1.5s ease-out;
 }
 
 .profile-pic {
@@ -28,12 +66,26 @@ body {
     border: 2px solid #ffffff;
     object-fit: cover;
     margin-bottom: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-pic:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.7), 0 0 30px rgba(255, 255, 255, 0.5);
+    border: 2px solid #4e44e7;
+    transition: transform 0.3s, box-shadow 0.3s ease, border 0.3s;
 }
 
 .profile h1 {
-    font-size: 1.8em;
+    font-size: 1.3em;
     margin: 0;
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.5);
+    animation: textGlow 1s ease-out infinite alternate;
+}
+
+.links {
+    margin-bottom: 20px;
+    animation: fadeIn 1.5s ease-out;
 }
 
 .link-button {
@@ -46,23 +98,36 @@ body {
     text-decoration: none;
     color: white;
     border-radius: 50px;
+    outline: 3px solid #4e44e7;
+    outline-offset: 4px;
     box-shadow: 0 4px 20px rgba(78, 68, 231, 0.5);
     position: relative;
     overflow: hidden;
 }
 
-.star {
-    position: absolute;
-    width: 5px;
-    height: 5px;
-    background-color: white;
-    border-radius: 50%;
-    opacity: 0.7;
-    animation: twinkle 2s infinite;
+.link-button:hover {
+    background: #6a63e8;
+    transform: scale(1.05);
 }
 
-@keyframes twinkle {
-    0% { opacity: 0.7; transform: scale(0.8); }
-    50% { opacity: 1; transform: scale(1); }
-    100% { opacity: 0.7; transform: scale(0.8); }
+@keyframes rgbAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 50% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes textGlow {
+    0% { text-shadow: 0 0 20px rgba(255, 255, 255, 0.8); }
+    100% { text-shadow: 0 0 40px rgba(255, 255, 255, 1); }
 }
