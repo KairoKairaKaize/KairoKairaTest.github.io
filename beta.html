@@ -33,7 +33,35 @@
             <a href="https://www.pinterest.com/JaidenKaize/" class="link-button">Pinterest</a>
         </div>
 
-    </div>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: #101010; /* Dark background */
+            position: relative;
+        }
+
+        .star {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 0 6px rgba(255, 255, 255, 0.8);
+            animation: twinkle 2s infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% {
+                opacity: 0.3;
+                transform: scale(0.8);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    </style>
 
 <script>
 
@@ -50,10 +78,6 @@
     });
 
 </script>
-
-
-</script>
-    
 
 </body>
 </html>
