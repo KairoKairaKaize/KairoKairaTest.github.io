@@ -73,16 +73,18 @@ body::after {
 
 .container {
     text-align: center;
-    width: 90%;
-    max-width: 400px;
-    padding: 20px;
+    width: 90%;                
+    max-width: 350px;           
+    height: 500px;           
+    padding: 20px;              
     background: rgba(0, 0, 0, 0.7);
     border-radius: 20px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
     position: relative;
     z-index: 10;
-    padding-top: 50px;
+    padding-top: 50px;          
 }
+
 
 .profile {
     margin-bottom: 20px;
