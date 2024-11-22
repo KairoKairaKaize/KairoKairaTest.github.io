@@ -2,8 +2,8 @@
 
 body {
     margin: 0;
-    font-family: 'Press Start 2P', monospace; 
-    background: linear-gradient(135deg, #f4e1d2, #e5c1d1, #c8d4e0, #d1e0e9);
+    font-family: 'Press Start 2P', monospace;
+    background: linear-gradient(135deg, #3a2c3e, #4a3f51, #2d3642, #3e2c47);
     background-size: 400% 400%;
     animation: rgbAnimation 15s ease infinite;
     color: white;
@@ -17,9 +17,19 @@ body {
 }
 
 
-@keyframes stars {
-    0% { opacity: 0.5; transform: translate(0px, 0px); }
-    100% { opacity: 0.1; transform: translate(150px, 150px); }
+@keyframes starAnimation {
+    0% {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+    50% {
+        opacity: 0.6;
+        transform: translate(5px, 5px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-5px, -5px);
+    }
 }
 
 body::before {
