@@ -3,9 +3,7 @@
 body {
     margin: 0;
     font-family: 'Press Start 2P', monospace;
-    background: linear-gradient(135deg, #f4e1d2, #e5c1d1, #c8d4e0, #d1e0e9);
-    background-size: 400% 400%;
-    animation: rgbAnimation 15s ease infinite;
+    background: radial-gradient(circle, #0d0d28 0%, #020211 100%);
     color: white;
     display: flex;
     justify-content: center;
@@ -13,32 +11,25 @@ body {
     height: 100vh;
     position: relative;
     overflow: hidden;
-    background-attachment: fixed;
-}
-
-@keyframes starAnimation {
-    0% {
-        opacity: 1;
-        transform: translate(0, 0);
-    }
-    50% {
-        opacity: 0.6;
-        transform: translate(5px, 5px);
-    }
-    100% {
-        opacity: 1;
-        transform: translate(-5px, -5px);
-    }
 }
 
 .star {
     position: absolute;
-    width: 3px;
-    height: 3px;
-    background-color: white;
+    width: 2px;
+    height: 2px;
+    background: white;
     border-radius: 50%;
-    opacity: 1;
-    animation: starAnimation 5s infinite ease-in-out;
+    opacity: 0.8;
+    animation: twinkle 5s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 0.8;
+    }
+    50% {
+        opacity: 0.4;
+    }
 }
 
 .container {
