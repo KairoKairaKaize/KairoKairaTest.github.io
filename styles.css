@@ -1,37 +1,42 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    background: radial-gradient(circle, #0d0d28 0%, #020211 100%);
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    position: relative;
-    overflow: hidden;
-    background-attachment: fixed;
+  margin: 0;
+  font-family: 'Press Start 2P', sans-serif;
+  background: radial-gradient(circle, #0d0d28 0%, #020211 100%);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
 }
 
+.stars {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  animation: twinkle 5s infinite ease-in-out;
+}
 
-.star {
-    position: absolute;
-    width: 2px;
-    height: 2px;
-    background: white;
-    border-radius: 50%;
-    opacity: 0.8;
-    animation: twinkle 5s infinite ease-in-out;
+.stars:before,
+.stars:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(white 1px, transparent 1px);
+  background-size: 2px 2px;
+  top: 0;
+  left: 0;
+  animation: twinkle 3s infinite alternate ease-in-out;
 }
 
 @keyframes twinkle {
-    0%, 100% {
-        opacity: 0.8;
-    }
-    50% {
-        opacity: 0.4;
-    }
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 0.5; }
 }
 
 .container {
@@ -77,8 +82,25 @@ body {
 }
 
 .links {
-    margin-bottom: 20px;
-    animation: fadeIn 1.5s ease-out;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btn {
+  text-decoration: none;
+  color: #fff;
+  padding: 10px 0;
+  border: 2px solid #4545ff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px #4545ff;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: #4545ff;
+  color: #151515;
+  box-shadow: 0 0 15px #4545ff;
 }
 
 .link-button {
