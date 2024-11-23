@@ -19,7 +19,7 @@ body {
   height: 100%;
   background: radial-gradient(circle, rgba(255, 255, 255, 1) 1px, transparent 1px);
   background-size: 3px 3px;
-  animation: rgbTwinkle 5s infinite ease-in-out;
+  animation: twinkleRGB 5s infinite ease-in-out, moveStars 10s linear infinite;
 }
 
 .stars:before,
@@ -30,23 +30,40 @@ body {
   height: 100%;
   background: radial-gradient(circle, rgba(255, 255, 255, 1) 1px, transparent 1px);
   background-size: 3px 3px;
-  animation: rgbTwinkle 7s infinite alternate ease-in-out;
+  animation: twinkleRGB 7s infinite ease-in-out alternate, moveStars 15s linear infinite;
 }
 
-@keyframes rgbTwinkle {
+@keyframes twinkleRGB {
   0% {
     opacity: 0.8;
-    filter: hue-rotate(0deg);
+    background: radial-gradient(circle, rgba(255, 0, 0, 1) 1px, transparent 1px);
+  }
+  25% {
+    opacity: 0.6;
+    background: radial-gradient(circle, rgba(0, 255, 0, 1) 1px, transparent 1px);
   }
   50% {
     opacity: 0.5;
-    filter: hue-rotate(180deg);
+    background: radial-gradient(circle, rgba(0, 0, 255, 1) 1px, transparent 1px);
+  }
+  75% {
+    opacity: 0.7;
+    background: radial-gradient(circle, rgba(255, 255, 0, 1) 1px, transparent 1px);
   }
   100% {
     opacity: 0.8;
-    filter: hue-rotate(360deg);
+    background: radial-gradient(circle, rgba(255, 0, 255, 1) 1px, transparent 1px);
   }
+}
 
+@keyframes moveStars {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-50px, 50px);
+  }
+}
 .container {
     text-align: center;
     width: 90%;
