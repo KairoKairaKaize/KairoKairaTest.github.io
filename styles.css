@@ -17,8 +17,9 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: transparent;
-  animation: twinkle 5s infinite ease-in-out;
+  background: radial-gradient(circle, rgba(255, 255, 255, 1) 1px, transparent 1px);
+  background-size: 3px 3px;
+  animation: rgbTwinkle 5s infinite ease-in-out;
 }
 
 .stars:before,
@@ -27,17 +28,24 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: radial-gradient(white 1px, transparent 1px);
-  background-size: 2px 2px;
-  top: 0;
-  left: 0;
-  animation: twinkle 3s infinite alternate ease-in-out;
+  background: radial-gradient(circle, rgba(255, 255, 255, 1) 1px, transparent 1px);
+  background-size: 3px 3px;
+  animation: rgbTwinkle 7s infinite alternate ease-in-out;
 }
 
-@keyframes twinkle {
-  0%, 100% { opacity: 0.8; }
-  50% { opacity: 0.5; }
-}
+@keyframes rgbTwinkle {
+  0% {
+    opacity: 0.8;
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    opacity: 0.5;
+    filter: hue-rotate(180deg);
+  }
+  100% {
+    opacity: 0.8;
+    filter: hue-rotate(360deg);
+  }
 
 .container {
     text-align: center;
