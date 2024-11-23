@@ -13,6 +13,18 @@ body {
   position: relative;
 }
 
+.container {
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    padding: 40px 20px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
+    position: relative;
+    z-index: 10;
+}
+
 .stars {
   position: absolute;
   width: 100%;
@@ -39,19 +51,6 @@ body {
   50% { opacity: 0.5; }
 }
 
-.container {
-    text-align: center;
-    width: 90%;
-    max-width: 400px;
-    padding: 40px 20px;
-    background: rgba(0, 0, 0, 0.7);
-    border-radius: 20px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
-    position: relative;
-    z-index: 10;
-}
-
-
 .profile {
     margin-bottom: 20px;
     animation: fadeIn 1.5s ease-out;
@@ -60,7 +59,7 @@ body {
 .profile-pic {
     width: 100px;
     height: 100px;
-    border-radius: 100%;
+    border-radius: 50%;
     border: 2px solid #ffffff;
     object-fit: cover;
     margin-bottom: 10px;
