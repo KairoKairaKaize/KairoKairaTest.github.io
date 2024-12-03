@@ -6,29 +6,28 @@
     <title>Jaiden's Haven</title>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <style>
+
         body {
             margin: 0;
             overflow: hidden;
-            background: linear-gradient(135deg, #000022, #101010);
+            background-color: #101010;
             font-family: 'Press Start 2P', cursive;
             color: white;
             transition: background 0.5s, color 0.5s;
-            position: relative;
-            height: 100vh;
         }
 
         .container {
             text-align: center;
-            margin-top: 10%;
+            margin-top: 5%;
         }
 
         .profile {
-            margin-bottom: 10px;
+            margin-bottom: 20px;
         }
 
         .profile-pic {
-            width: 120px;
-            height: 120px;
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
             border: 4px solid white;
             box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
@@ -40,14 +39,14 @@
         }
 
         h1 {
-            font-size: 1.2rem;
+            font-size: 1.5rem;
             color: #00bfff;
         }
 
         .links {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 15px;
             margin-top: 20px;
         }
 
@@ -56,16 +55,16 @@
             color: white;
             background: none;
             border: 2px solid #00bfff;
-            padding: 8px 18px;
+            padding: 10px 20px;
             border-radius: 50px;
-            font-size: 0.9rem;
+            font-size: 1rem;
             transition: 0.3s;
         }
 
         .link-button:hover {
             background: #00bfff;
             color: black;
-            transform: translateY(-3px);
+            transform: translateY(-5px);
         }
 
         .star {
@@ -90,11 +89,11 @@
         }
 
         footer {
-            margin-top: 20px;
+            margin-top: 40px;
             background-color: #202020;
-            padding: 15px;
+            padding: 20px;
             color: #ccc;
-            font-size: 0.8rem;
+            font-size: 0.9rem;
             text-align: center;
             animation: fadeIn 2s ease-in-out;
         }
@@ -110,7 +109,7 @@
         }
 
         .about-me {
-            max-width: 500px;
+            max-width: 600px;
             margin: 0 auto;
             line-height: 1.5;
         }
@@ -126,21 +125,38 @@
             }
         }
 
-        .music-toggle, .theme-toggle {
-            margin: 15px auto;
+        .music-toggle {
+            margin: 20px auto;
             display: block;
-            padding: 8px 15px;
+            padding: 10px 20px;
             background: #00bfff;
             color: black;
             border: none;
             border-radius: 20px;
-            font-size: 0.9rem;
+            font-size: 1rem;
             cursor: pointer;
             transition: background 0.3s;
         }
 
-        .music-toggle:hover, .theme-toggle:hover {
+        .music-toggle:hover {
             background: #007acc;
+        }
+
+        .theme-toggle {
+            margin: 20px auto;
+            display: block;
+            padding: 10px 20px;
+            background: white;
+            color: black;
+            border: none;
+            border-radius: 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .theme-toggle:hover {
+            background: #ccc;
         }
 
         body.light {
@@ -177,39 +193,16 @@
 
         @media (max-width: 768px) {
             h1 {
-                font-size: 1rem;
+                font-size: 1.2rem;
             }
 
             .link-button {
-                font-size: 0.8rem;
-            }
-        }
-
-        /* Background star field animation */
-        .star-field {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
-            animation: starsMove 120s linear infinite;
-        }
-
-        @keyframes starsMove {
-            0% {
-                background-position: 0 0;
-            }
-            100% {
-                background-position: 100% 100%;
+                font-size: 0.9rem;
             }
         }
     </style>
 </head>
 <body>
-
-    <div class="star-field"></div>
 
     <div class="container">
         <div class="profile">
@@ -228,6 +221,40 @@
 
         <button id="theme-toggle" class="theme-toggle">Switch to Light Mode</button>
 
+        <script>
+
+            const musicToggle = document.getElementById('music-toggle');
+            const music = document.getElementById('background-music');
+
+            musicToggle.addEventListener('click', () => {
+                if (music.paused) {
+                    music.play();
+                    musicToggle.textContent = 'Pause Music';
+                } else {
+                    music.pause();
+                    musicToggle.textContent = 'Play Music';
+                }
+            });
+
+            const themeToggle = document.getElementById('theme-toggle');
+            const body = document.body;
+
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            if (savedTheme === 'light') {
+                body.classList.add('light');
+                themeToggle.textContent = 'Switch to Dark Mode';
+            }
+
+            themeToggle.addEventListener('click', () => {
+                body.classList.toggle('light');
+                const isLight = body.classList.contains('light');
+                themeToggle.textContent = isLight
+                    ? 'Switch to Dark Mode'
+                    : 'Switch to Light Mode';
+                localStorage.setItem('theme', isLight ? 'light' : 'dark');
+            });
+        </script>
+
         <div class="links">
             <a href="https://www.youtube.com/@KairaKairoKaize" class="link-button" title="Go to YouTube">YouTube</a>
             <a href="https://www.instagram.com/jaidenofsyxth/" class="link-button" title="Visit Instagram">Instagram</a>
@@ -239,45 +266,11 @@
     <footer>
         <div class="about-me">
             <p>
-                Welcome to my Haven! I'm Jaiden! A somewhat-skilled coder, and aspiring cybersecurity analyst. 
+                Welcome to my Haven! I'm Jaiden! A somewhat-skiled coder, and aspiring cybersecurity analyst. 
             </p>
         </div>
         <p>&copy; 2024 Jaiden's Haven. All Rights Reserved.</p>
-        <a href="mailto:syxthreprise@gmail.com" title="Email me">Contact Me</a>
+<a href="mailto:syxthreprise@gmail.com" title="Email me">Contact Me</a>
     </footer>
-
-    <script>
-        const musicToggle = document.getElementById('music-toggle');
-        const music = document.getElementById('background-music');
-
-        musicToggle.addEventListener('click', () => {
-            if (music.paused) {
-                music.play();
-                musicToggle.textContent = 'Pause Music';
-            } else {
-                music.pause();
-                musicToggle.textContent = 'Play Music';
-            }
-        });
-
-        const themeToggle = document.getElementById('theme-toggle');
-        const body = document.body;
-
-        const savedTheme = localStorage.getItem('theme') || 'dark';
-        if (savedTheme === 'light') {
-            body.classList.add('light');
-            themeToggle.textContent = 'Switch to Dark Mode';
-        }
-
-        themeToggle.addEventListener('click', () => {
-            body.classList.toggle('light');
-            const isLight = body.classList.contains('light');
-            themeToggle.textContent = isLight
-                ? 'Switch to Dark Mode'
-                : 'Switch to Light Mode';
-            localStorage.setItem('theme', isLight ? 'light' : 'dark');
-        });
-    </script>
-
 </body>
 </html>
